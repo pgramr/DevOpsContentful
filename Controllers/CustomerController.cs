@@ -1,12 +1,16 @@
 ﻿using Contentful.Core;
+using DevOpsContentful.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace DevOpsContentful.Controllers
 {
     public class CustomerController : Controller
     {
+        IEnumerable<Customer> _customersEnum = new List<Customer>();
         private readonly IContentfulClient _client;
         private readonly HttpClient httpClient1 = new HttpClient();
         public ContentfulManagementClient GetClient()
@@ -14,26 +18,29 @@ namespace DevOpsContentful.Controllers
             var client = new ContentfulManagementClient(httpClient1, "CFPAT-jKh-8Ow0RWjRyEK39dgunPtCKPG8wa-0cPZfoho9IQw", "qui5qc0w6jjg");
             return client;
         }
-        public CustomersController(IContentfulClient client)
+        public CustomerController(IContentfulClient client)
         {
             _client = client;
         }
         // GET: CustomerController
-        public ActionResult View1()
+        public async Task<ActionResult> View1()
         {
-            return View();
+            var customers = await _client.GetEntries<Customer>();
+            _customersEnum = customers;
+            return View(_customersEnum);
+            //return View();
         }
 
         // GET: CustomerController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View("Details");
         }
 
         // GET: CustomerController/Create
         public ActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: CustomerController/Create
@@ -54,7 +61,7 @@ namespace DevOpsContentful.Controllers
         // GET: CustomerController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View("View2");
         }
 
         // POST: CustomerController/Edit/5
@@ -64,11 +71,11 @@ namespace DevOpsContentful.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Create));
+                return RedirectToAction(nameof(View1));
             }
             catch
             {
-                return View();
+                return View("View2");
             }
         }
 
