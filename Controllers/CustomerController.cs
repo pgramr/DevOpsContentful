@@ -80,10 +80,14 @@ namespace DevOpsContentful.Controllers
         }
 
         // GET: CustomerController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //public async Task<ActionResult> Delete(int id)
+        //{
+
+        //    var client0 = new ContentfulManagementClient(httpClient1, "CFPAT-jKh-8Ow0RWjRyEK39dgunPtCKPG8wa-0cPZfoho9IQw", "qui5qc0w6jjg");
+        //    await client0.DeleteEntry()
+
+        //    return View();
+        //} 
 
         // POST: CustomerController/Delete/5
         [HttpPost]

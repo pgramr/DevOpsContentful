@@ -3,6 +3,9 @@
     ViewData["Title"] = "Customers";
 }
 
+@section {
+    <h1>The time is: @DateTime.Now.ToShortTimeString()</h1>
+}
 <p>
     <a asp-action="Create">Create New</a>
 </p>
