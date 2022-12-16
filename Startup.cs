@@ -28,6 +28,7 @@ namespace DevOpsContentful
             services.AddContentful(Configuration);
             services.AddSingleton<HomeController>();
             services.AddSingleton<Customer>();
+            services.AddSingleton<Snippet>();
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddServerSideBlazor();

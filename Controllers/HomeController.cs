@@ -12,9 +12,10 @@ namespace DevOpsContentful.Controllers
 {
     public class HomeController : Controller
     {
+        IEnumerable<Snippet> _snippet = new List<Snippet>();
         private readonly ILogger<HomeController> _logger;
         private readonly IContentfulClient _client;
-
+       
         public HomeController(ILogger<HomeController> logger, IContentfulClient client)
         {
             _client = client;
@@ -34,10 +35,17 @@ namespace DevOpsContentful.Controllers
         {
             return View("View1");
         }
+        //public IActionResult Snippets()
+        //{
+        //    return View("Snippets");
+        //}
         public async Task<IActionResult> Snippets()
         {
-            var snippets = await _client.GetEntriesByType<Snippet>("Snippet");
-            return View("Snippets", snippets);
+            //var snippets = await _client.GetEntries<Snippet>();
+            var snippets = await _client.GetAssets();
+            
+            return View(snippets);
+            //return View();
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
