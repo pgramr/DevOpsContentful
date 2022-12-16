@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DevOpsContentful.Models
 {
-    public class Asset
+    public class Snippet
     {
         [JsonProperty("sys")]
         public SystemProperties SystemProperties { get; set; }
