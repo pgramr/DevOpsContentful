@@ -6,6 +6,11 @@
     <title>@ViewData["Title"] - DevOpsContentful</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript" src="@Url.Content("/Scripts/jquery-1.6.2.min.js")"></script>
+    @RenderSection("sc", required: false)
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
 </head>
 <body>
     <header>
@@ -25,6 +30,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="View1">Customers</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Snippets">Code Snippets</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
@@ -37,7 +45,16 @@
             @RenderBody()
         </main>
     </div>
-
+    <div id="rnder">
+        @if (IsSectionDefined("rnder"))
+        {
+            @RenderSection("rnder")
+        }
+        else
+        {
+            <p>Default section...</p>
+        }
+    </div>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - DevOpsContentful - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
