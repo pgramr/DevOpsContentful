@@ -16,13 +16,13 @@ jobs:
     - name: Build dotnet
       run: dotnet build --configuration Release
     - name: dotnet puglish
-      run: dotnet publish -r win-x64 -c Release -o ${{env.DOTNET_ROOT}}/app
+      run: dotnet publish -r win-x64 -c Release -o ${{env.DOTNET_ROOT}}/
 
     - name: Upload artifact - Windows
       uses: actions/upload-artifact@v1.0.0
       with:
         name: .dotnet-DevOpsContentful
-        path: ${{env.DOTNET_ROOT}}/app
+        path: ${{env.DOTNET_ROOT}}/
     
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
