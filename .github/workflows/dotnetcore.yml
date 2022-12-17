@@ -1,37 +1,32 @@
+name: .NET Core
 
-name: .NET
-
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+on: [push]
 
 jobs:
-  build:
+  buildpackage:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET CORE
-      uses: actions/setup-dotnet@v3
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1
-    - name: Restore dependencies
-      run: dotnet restore
+        dotnet-version: 3.1.x
+    - name: Build for Linux
+      run: dotnet publish -r linux-x64 --configuration ReleaseComplete
     - name: Build for Windows
       run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed=true
+
     - name: Upload artifact - Windows
-      uses: actions/upload-artifact@v3.1.1
+      uses: actions/upload-artifact@v1.0.0
       with:
         name: DevOpsContentful.exe
-        path: bin/ReleaseComplete/netcoreapp3.1/win-publish/DevOpsContentful.exe
+        path: bin/Release/aspnetcore3.1/win-x64/publish/DevOpsContentful.exe
+    
     - name: Docker login
-      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD}}
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Docker Build
-      run: docker build -t ${{ secrets.DOCKER_USER }}/devops:latest .
+      run: docker build -t ${{ secrets.DOCKER_USER }}/devopscontentful:latest .
     - name: Upload container to Docker Hub with Push
-      run: docker push ${{ secrets.DOCKER_USER }}/devops:latest
-      
-        
+      run: docker push ${{ secrets.DOCKER_USER }}/devopscontentful:latest
