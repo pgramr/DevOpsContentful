@@ -25,8 +25,8 @@ jobs:
         path: ${{env.DOTNET_ROOT}}/
     
     - name: Docker login
-      run: docker login -u ${{ secrets.DPL }} -p ${{ secrets.DPL2 }}
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Docker Build
-      run: docker build -t ${{ secrets.DPL }}/devopscontentful:latest .
+      run: docker build -t ${{ secrets.DOCKER_USER }}/devopscontentful:latest .
     - name: Upload container to Docker Hub with Push
-      run: docker push ${{ secrets.DPL }}/devopscontentful:latest
+      run: docker push ${{ secrets.DOCKER_USER }}/devopscontentful:latest
