@@ -20,9 +20,20 @@ jobs:
         dotnet-version: 3.1
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-    - name: Publish
-      run: dotnet publish
+    - name: Build for Linux
+      run: dotnet publish -r linux-x64 --configuration ReleaseComplete
+    - name: Build for Windows
+      run: dotnet publish -r win-x64- --configuration ReleaseComplete
+    - name: Upload artifact - Windows
+      uses: actions/upload-artifact@v3.1.1
+      with:
+        name: DevOpsContentful.exe
+        path: bin/ReleaseComplete/netcoreapp3.1/win-publish/DevOpsContentful.exe
+    - name: Docker login
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD}}
+    - name: Docker Build
+      run: docker build -t ${{ secrets.DOCKER_USER }}/devops:latest .
+    - name: Upload container to Docker Hub with Push
+      run: docker push ${{ secrets.DOCKER_USER }}/devops:latest
+      
+        
