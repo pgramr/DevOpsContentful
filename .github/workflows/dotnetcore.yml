@@ -14,13 +14,13 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Build for Windows
-      run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed=true
+      run: dotnet publish -r win-x64 -c Release
 
     - name: Upload artifact - Windows
       uses: actions/upload-artifact@v1.0.0
       with:
         name: DevOpsContentful.exe
-        path: bin/Release/aspnetcore3.1/win-x64/publish/DevOpsContentful.exe
+        path: DevOpsContentful/bin/Release/aspnetcore3.1/win-x64/publish/DevOpsContentful.exe
     
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
