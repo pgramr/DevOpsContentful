@@ -20,8 +20,6 @@ jobs:
         dotnet-version: 3.1
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build for Linux
-      run: dotnet publish -r linux-x64 --configuration ReleaseComplete
     - name: Build for Windows
       run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed=true
     - name: Upload artifact - Windows
