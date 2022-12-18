@@ -22,6 +22,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: DevOpsContentful
-        path: /home/runner/work/DevOpsContentful/DevOpsContentful/bin/Release/netcoreapp3.1/win-x64/publish/
+        path: /home/runner/work/DevOpsContentful/DevOpsContentful/bin/Release/netcoreapp3.1/win-x64/
     - name: Show contents of the current working directory
       run: ls -R
