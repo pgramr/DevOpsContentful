@@ -16,7 +16,7 @@ jobs:
     - name: Build dotnet
       run: dotnet build --configuration Release
     - name: dotnet puglish
-      run: dotnet publish -r win-x64 -c Release -o ${{env.DOTNET_ROOT}}/
+      run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed=true -o ${{env.DOTNET_ROOT}}/
 
     - name: Upload artifact - Windows
       uses: actions/upload-artifact@v1.0.0
