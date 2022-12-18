@@ -1,6 +1,5 @@
 name: .NET Core
-env:
-    DOTNET_ROOT: DevOpsContentful
+
 on: [push]
 jobs:
   build:
