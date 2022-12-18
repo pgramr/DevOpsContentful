@@ -1,32 +1,30 @@
 name: .NET Core
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  buildpackage:
+  build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1
-    - name: Build dotnet
-      run: dotnet build --configuration Release
-    - name: dotnet puglish
-      run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed=true -o ${{env.DOTNET_ROOT}}/
-
-    - name: Upload artifact - Windows
-      uses: actions/upload-artifact@v1.0.0
+        dotnet-version: 3.1.x
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Publish
+      run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true
+    - name: Upload DevOpsContentful Build Artifact
+      uses: actions/upload-artifact@v2
       with:
-        name: .dotnet-DevOpsContentful
-        path: ${{env.DOTNET_ROOT}}/
-    
-    - name: Docker login
-      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
-    - name: Docker Build
-      run: docker build -t ${{ secrets.DOCKER_USER }}/reponet:latest .
-    - name: Upload container to Docker Hub with Push
-      run: docker push ${{ secrets.DOCKER_USER }}/reponet:latest
+        name: DevOpsContentful
+        path: /home/runner/work/Playground/Playground/src/DevOpsContentful/bin/Debug/netcoreapp3.1/publish/
+    - name: Show contents of the current working directory
+      run: ls -R
