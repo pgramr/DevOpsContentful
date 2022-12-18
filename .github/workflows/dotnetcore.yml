@@ -17,7 +17,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Publish
-      run: dotnet publish -r win-x64 -c ReleaseComplete
+      run: dotnet publish -r win-x64 -c ReleaseComplete /p:PublishSingleFile=true /p:PublishTrimmed=true
     - name: Upload DevOpsContentful Build Artifact
       uses: actions/upload-artifact@v3
       with:
@@ -25,3 +25,9 @@ jobs:
         path: /home/runner/work/DevOpsContentful/DevOpsContentful/bin/ReleaseComplete/netcoreapp3.1/win-x64/
     - name: Show contents of the current working directory
       run: ls -R
+    - name: Docker login
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+    - name: Docker Build
+      run: docker build -t ${{ secrets.DOCKER_USER }}/reponet:latest .
+    - name: Upload container to Docker Hub with Push
+      run: docker push ${{ secrets.DOCKER_USER }}/reponet:latest
