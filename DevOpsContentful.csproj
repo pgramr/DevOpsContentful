@@ -10,6 +10,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\DevOpsContentful.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\DevOpsContentful.MvcApplicationPartsAssemblyInfo.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\DevOpsContentful.RazorAssemblyInfo.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\DevOpsContentful.RazorTargetAssemblyInfo.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\Customer\View1.cshtml.g.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\Customer\View2.cshtml.g.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\Home\Snippets.cshtml.g.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs" />
+    <Compile Include="obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs" />
+    <Compile Include="obj\Release\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="bin\Debug\netcoreapp3.1\appsettings.Development.json" />
     <Content Include="bin\Debug\netcoreapp3.1\appsettings.json" />
     <Content Include="bin\Debug\netcoreapp3.1\DevOpsContentful.deps.json" />
@@ -20,6 +39,12 @@
     <Content Include="bin\Release\netcoreapp3.1\DevOpsContentful.deps.json" />
     <Content Include="bin\Release\netcoreapp3.1\DevOpsContentful.runtimeconfig.dev.json" />
     <Content Include="bin\Release\netcoreapp3.1\DevOpsContentful.runtimeconfig.json" />
+    <Content Include="obj\Debug\netcoreapp3.1\DevOpsContentful.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\netcoreapp3.1\project.razor.vs.json" />
+    <Content Include="obj\DevOpsContentful.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\Release\netcoreapp3.1\DevOpsContentful.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\netcoreapp3.1\project.razor.vs.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -219,12 +244,51 @@
     <None Include="bin\Release\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll" />
     <None Include="bin\Release\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
     <None Include="DevOpsContentful.sln" />
+    <None Include="obj\Debug\netcoreapp3.1\apphost.exe" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.assets.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.csproj.CopyComplete" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.dll" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.genruntimeconfig.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.pdb" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.RazorAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.RazorCoreGenerate.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.RazorTargetAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.TagHelpers.input.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.TagHelpers.output.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.Views.dll" />
+    <None Include="obj\Debug\netcoreapp3.1\DevOpsContentful.Views.pdb" />
+    <None Include="obj\Debug\netcoreapp3.1\staticwebassets\DevOpsContentful.StaticWebAssets.Manifest.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\staticwebassets\DevOpsContentful.StaticWebAssets.Pack.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.DevOpsContentful.props" />
+    <None Include="obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.DevOpsContentful.props" />
+    <None Include="obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.DevOpsContentful.props" />
+    <None Include="obj\Debug\netcoreapp3.1\staticwebassets\msbuild.DevOpsContentful.Microsoft.AspNetCore.StaticWebAssets.props" />
+    <None Include="obj\Debug\netcoreapp3.1\_IsIncrementalBuild" />
+    <None Include="obj\DevOpsContentful.csproj.nuget.g.props" />
+    <None Include="obj\DevOpsContentful.csproj.nuget.g.targets" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Release\netcoreapp3.1\apphost.exe" />
+    <None Include="obj\Release\netcoreapp3.1\DevOpsContentful.assets.cache" />
+    <None Include="obj\Release\netcoreapp3.1\DevOpsContentful.Views.dll" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="contentful.aspnetcore" Version="7.2.2" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\Release\netcoreapp3.1\Razor\Views\Customer\" />
+    <Folder Include="obj\Release\netcoreapp3.1\Razor\Views\Home\" />
+    <Folder Include="obj\Release\netcoreapp3.1\Razor\Views\Shared\" />
+    <Folder Include="obj\Release\netcoreapp3.1\staticwebassets\" />
   </ItemGroup>
 
 </Project>
