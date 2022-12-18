@@ -8,11 +8,10 @@ WORKDIR /src
 COPY ["DevOpsContentful.csproj", "."]
 RUN dotnet restore "./DevOpsContentful.csproj"
 COPY . .
-WORKDIR "/src/."
-RUN dotnet build "DevOpsContentful.csproj" -c Release -o /app/build
+
 
 FROM build AS publish
-RUN dotnet publish "DevOpsContentful.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "DevOpsContentful.csproj" -c Release
 
 FROM base AS final
 WORKDIR /app
