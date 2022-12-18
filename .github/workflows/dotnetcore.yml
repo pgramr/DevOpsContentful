@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Publish
-      run: dotnet publish -r win-x64 -c Release --self-contained /p:PublishSingleFile=true
+      run: dotnet publish -r win-x64 -c Release
     - name: Upload DevOpsContentful Build Artifact
       uses: actions/upload-artifact@v3
       with:
