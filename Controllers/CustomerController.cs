@@ -1,7 +1,9 @@
 ﻿using Contentful.Core;
+using Contentful.Core.Models;
 using DevOpsContentful.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -35,26 +37,40 @@ namespace DevOpsContentful.Controllers
         {
             return View("Details");
         }
-
-        // GET: CustomerController/Create
-        public ActionResult Create()
-        {
-            return View("Create");
-        }
+       
+         //GET: CustomerController/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: CustomerController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create()
         {
-            try
-            {
-                return RedirectToAction(nameof(Create));
-            }
-            catch
-            {
-                return View();
-            }
+            var iclient = GetClient();
+            //try
+            //{
+                
+                var entry = new Entry<dynamic>();
+                entry.SystemProperties = new SystemProperties();
+                entry.SystemProperties.Version = 1;
+            entry.SystemProperties.Id = "Customer";
+            entry.Fields.Name = new Dictionary<string, string>() { { "en-US", "Jan" } };
+            entry.Fields.Address = new Dictionary<string, string>() { { "en-US", "Jan" } };
+            entry.Fields.IBAN = new Dictionary<string, string>() { { "en-US", "Jan" } };
+            entry.Fields.VTA = new Dictionary<string, string>() { { "en-US", "Jan" } };
+
+
+            return (IActionResult)await iclient.CreateEntry<dynamic>(entry, contentTypeId: "Customer");
+                
+            //return RedirectToAction(nameof(Create));
+            
+            //catch
+            //{
+            //    return View();
+            //}
         }
 
         // GET: CustomerController/Edit/5

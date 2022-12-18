@@ -118,6 +118,7 @@ C:\Users\haidari\source\repos\DevOpsContentful\obj\Release\netcoreapp3.1\staticw
 C:\Users\haidari\source\repos\DevOpsContentful\obj\Release\netcoreapp3.1\DevOpsContentful.TagHelpers.input.cache
 C:\Users\haidari\source\repos\DevOpsContentful\obj\Release\netcoreapp3.1\DevOpsContentful.TagHelpers.output.cache
 C:\Users\haidari\source\repos\DevOpsContentful\obj\Release\netcoreapp3.1\DevOpsContentful.RazorCoreGenerate.cache
+C:\Users\haidari\source\repos\DevOpsContentful\obj\Release\netcoreapp3.1\Razor\Views\Customer\Create.cshtml.g.cs
 C:\Users\haidari\source\repos\DevOpsContentful\obj\Release\netcoreapp3.1\Razor\Views\Customer\View1.cshtml.g.cs
 C:\Users\haidari\source\repos\DevOpsContentful\obj\Release\netcoreapp3.1\Razor\Views\Customer\View2.cshtml.g.cs
 C:\Users\haidari\source\repos\DevOpsContentful\obj\Release\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
