@@ -28,7 +28,6 @@ namespace DevOpsContentful.Controllers
             var customers = await _client.GetEntries<Customer>();
             _customersEnum = customers;
             return View(_customersEnum);
-            //return View();
         }
 
         // GET: CustomerController/Details/5
