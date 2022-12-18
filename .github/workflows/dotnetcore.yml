@@ -1,6 +1,5 @@
 name: .NET Core
-env:
-    DOTNET_ROOT: /usr/share/dotnet
+
 on: [push]
 jobs:
   build:
@@ -16,11 +15,11 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Publish
-      run: dotnet publish -r win-x64 -c Release --self-contained /p:PublishSingleFile=true
+      run: dotnet publish -r win-x64 -c Release
     - name: Upload DevOpsContentful Build Artifact
       uses: actions/upload-artifact@v3
       with:
         name: DevOpsContentful.exe
-        path: /DevOpsContentful/bin/Release/netcoreapp3.1/publish/
+        path: bin/Release/netcoreapp3.1/
     - name: Show contents of the current working directory
       run: ls -R
