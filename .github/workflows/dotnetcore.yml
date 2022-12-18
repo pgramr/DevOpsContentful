@@ -20,6 +20,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: DevOpsContentful
-        path: /home/runner/work/DevOpsContentful/DevOpsContentful/src/DevOpsContentful/bin/Debug/netcoreapp3.1/publish/
+        path: /home/runner/work/DevOpsContentful/DevOpsContentful/bin/Debug/netcoreapp3.1/publish/
     - name: Show contents of the current working directory
       run: ls -R
