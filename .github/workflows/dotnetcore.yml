@@ -17,11 +17,11 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Publish
-      run: dotnet publish -r win-x64 -c Release
+      run: dotnet publish -r win-x64 -c ReleaseComplete
     - name: Upload DevOpsContentful Build Artifact
       uses: actions/upload-artifact@v3
       with:
         name: DevOpsContentful
-        path: /home/runner/work/DevOpsContentful/DevOpsContentful/bin/Release/netcoreapp3.1/win-x64/
+        path: /home/runner/work/DevOpsContentful/DevOpsContentful/bin/ReleaseComplete/netcoreapp3.1/win-x64/
     - name: Show contents of the current working directory
       run: ls -R
