@@ -19,7 +19,7 @@ jobs:
     - name: Upload DevOpsContentful Build Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: DevOpsContentful
-        path: /home/runner/work/DevOpsContentful/DevOpsContentful/bin/Release/netcoreapp3.1/publish/
+        name: DevOpsContentful.exe
+        path: /DevOpsContentful/bin/Release/netcoreapp3.1/publish/
     - name: Show contents of the current working directory
       run: ls -R
