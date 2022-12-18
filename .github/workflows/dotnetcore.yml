@@ -1,5 +1,6 @@
 name: .NET Core
-
+env:
+    DOTNET_ROOT: /usr/share/dotnet
 on: [push]
 jobs:
   build:
