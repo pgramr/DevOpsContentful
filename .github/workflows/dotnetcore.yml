@@ -14,10 +14,9 @@ jobs:
         dotnet-version: 3.1.x
     - name: Install dependencies
       run: dotnet restore
-    - name: Build with dotnet
-      run: dotnet build Document.Approval.sln --configuration Release
+      working-directory: src/DevOpsContentful
     - name: Publish
-      run: dotnet publish -r win-x64 -c Release ${{env.DOTNET_ROOT}}/
+      run: dotnet publish -r win-x64 -c Release
     - name: Upload DevOpsContentful Build Artifact
       uses: actions/upload-artifact@v3
       with:
